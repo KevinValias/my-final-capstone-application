@@ -1,31 +1,73 @@
 import React, { Component } from "react";
+import { Redirect } from "react-router";
+import { TextField, Button, Container } from "@material-ui/core";
 
-export default class Login extends Component {
-    render() {
-        return (
-            <form>
-                <h3>Welcome Back!</h3>
+class App extends Component {
+  state = {
+    username: "",
+    password: "",
+    redirectHome: false,
+  };
 
-                <div className="form-group">
-                    <label>Email address</label>
-                    <input type="email" className="form-control" placeholder="Enter email" />
-                </div>
+  handleTextChange = (e) => {
+    const state = { ...this.state };
+    state[e.target.name] = e.target.value;
+    this.setState(state);
+  };
 
-                <div className="form-group">
-                    <label>Password</label>
-                    <input type="password" className="form-control" placeholder="Enter password" />
-                </div>
+  login = (e) => {
+    e.preventDefault();
+    document.cookie = "loggedIn=true;max-age=60*1000";
+    this.props.setUser(this.state.username);
+    this.setState({ redirecthome: true });
+  };
 
-                <div className="form-group">
-                    <div className="custom-control custom-checkbox">
-                        <input type="checkbox" className="custom-control-input" id="customCheck1" />
-                        <label className="custom-control-label" htmlFor="customCheck1">Remember me</label>
-                    </div>
-                </div>
-
-                <button type="submit" className="btn btn-primary btn-block">Login</button>
-               
-            </form>
-        );
+  render() {
+    if (this.state.redirectHome) {
+      return <Redirect to="/" />;
     }
+    return (
+      <div className="auth-wrapper">
+        <div className="auth-inner">
+          <Container>
+            <form className="login-from" onSubmit={this.login}>
+              <h3>Welcome!</h3>
+
+              <TextField
+                variant="outlined"
+                fullWidth="500px"
+                required
+                onChange={this.handleTextChange}
+                value={this.state.username}
+                name="username"
+                label="Username"
+                type="text"
+              />
+
+              <TextField
+                variant="outlined"
+                fullWidth="500px"
+                required
+                onChange={this.handleTextChange}
+                value={this.state.password}
+                name="password"
+                label="Password"
+                type="password"
+              />
+
+              <Button
+                type="submit"
+                className="btn btn-primary btn-block"
+                variant="contained"
+              >
+                Login
+              </Button>
+            </form>
+          </Container>
+        </div>
+      </div>
+    );
+  }
 }
+
+export default App;
