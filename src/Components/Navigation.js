@@ -1,7 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Button } from "@material-ui/core";
+import {
+  Button,
+  AppBar,
+  Toolbar,
+  Typography,
+  IconButton,
+} from "@material-ui/core";
 import cookie from "cookie";
+import WbCloudyIcon from "@material-ui/icons/WbCloudy";
 
 // import { Link } from "react-router-dom";
 
@@ -9,34 +16,26 @@ const Navigation = (props) => {
   const cookies = cookie.parse(document.cookie);
   console.log(props.user);
   return (
-    <nav className="navbar navbar-expand-lg navbar-light fixed-top">
-      <div className="container">
-        <Link className="navbar-brand">CloudBodyHost</Link>
-        <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
-          <ul className="navbar-nav ml-auto">
-            <li className="nav-item">
-              <Button>
-                <Link to={"/home"}>HOME</Link>
-              </Button>
-            </li>
-            <li className="nav-item">
+    <div>
+      <AppBar postion="relative">
+        <Toolbar>
+          <IconButton color="white">
+            <WbCloudyIcon />
+          </IconButton>
+          <Typography variant="h6" style={{ flexGrow: "1" }}>
+            CloudBodyHost
+          </Typography>
+          <ul className="nav-list">
+            <li className="nav-list-item">
               <Button>
                 <Link to={"/about"}>ABOUT</Link>
               </Button>
             </li>
-            <li className="nav-item">
+            <li className="nav-list-item">
               {document.cookie === "loggedIn=true" && (
                 <div>
                   <Button>
-                    <Link to={"/dashboard"}>DASHBOARD</Link>
-                  </Button>
-                  <Button
-                    onClick={() => {
-                      document.cookie = "loggedIn=";
-                      window.location.replace("/home");
-                    }}
-                  >
-                    Logout
+                    <Link to={"/add"}>ADD</Link>
                   </Button>
                 </div>
               )}
@@ -45,14 +44,16 @@ const Navigation = (props) => {
               {document.cookie === "loggedIn=true" && (
                 <div>
                   <Button>
-                    <Link to="/Add">ADD</Link>
+                    <Link to={"/dashboard"}>DASHBOARD</Link>
                   </Button>
                   <Button
                     onClick={() => {
                       document.cookie = "loggedIn=";
-                      window.location.replace("/login");
+                      window.location.replace("/");
                     }}
-                  ></Button>
+                  >
+                    Logout
+                  </Button>
                 </div>
               )}
             </li>
@@ -69,9 +70,25 @@ const Navigation = (props) => {
               )}
             </li>
           </ul>
-        </div>
-      </div>
-    </nav>
+        </Toolbar>
+      </AppBar>
+      <Typography color="text-primary">
+        {cookies.loggedIn && (
+          <span className="welcome-message">
+            Welcome Back:{" "}
+            <span
+              style={{
+                letterSpacing: "3px",
+                fontWeight: "bold",
+              }}
+            >
+              {props.user}
+            </span>
+            !
+          </span>
+        )}
+      </Typography>
+    </div>
   );
 };
 

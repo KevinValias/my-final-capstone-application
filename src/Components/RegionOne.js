@@ -3,13 +3,14 @@ import Iframe from "react-iframe";
 const dotenv = require("dotenv");
 dotenv.config(process.env.REACT_APP_API_KEY);
 
-class About extends Component {
+class RegionOne extends Component {
   render() {
     return (
       <div>
         <Iframe
           id="myWidget"
-          src="https://human.biodigital.com/widget/?m=male_system_muscular_12&dk=<developer_key>"
+          src={`${process.env.REACT_APP_API_KEY}`}
+          //Line 12 is how I have been able to access my API to deliver my content for my specific REGION //
           width="100%"
           height="90%"
           position="fixed"
@@ -22,4 +23,4 @@ class About extends Component {
   }
 }
 
-export default About;
+export default RegionOne;

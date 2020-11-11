@@ -6,12 +6,15 @@ import Navigation from "./Containers/Navigation";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import { Provider } from "react-redux";
 import store from "./Redux/store";
+const dotenv = require("dotenv");
+dotenv.config(process.env.REACT_APP_API_KEY);
 
 function App() {
   return (
     <Provider store={store}>
       <BrowserRouter>
         <Navigation />
+
         <Router />
       </BrowserRouter>
     </Provider>
