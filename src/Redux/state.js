@@ -1,6 +1,3 @@
-const dotenv = require("dotenv");
-dotenv.config(process.env.REACT_APP_API_KEY);
-
 export default {
   regions: [
     {
@@ -11,7 +8,6 @@ export default {
       region: "Head",
       action:
         "One function of the frontalis is to help a person focus on distant objects. The frontalis extends from the eyebrow to the hairline. An individual may undergo a brow lift in order to tighten the frontalis muscle.",
-      api: process.env.REACT_APP_API_KEY,
     },
     {
       id: 2,
@@ -21,7 +17,6 @@ export default {
       region: "Thorax",
       action:
         "Its major actions are adduction, or depression, of the arm (in opposition to the action of the deltoideus muscle) and rotation of the arm forward about the axis of the body.",
-      // api: process.env.REACT_APP_API_KEY2,
     },
     {
       id: 3,

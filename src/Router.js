@@ -11,8 +11,8 @@ import Details from "./Containers/Details";
 import About from "./Components/About";
 import RegionOne from "./Containers/RegionOne";
 import RegionTwo from "./Containers/RegionTwo";
-import RegionThree from "./Components/RegionThree";
-import RegionFour from "./Components/RegionFour";
+import RegionThree from "./Containers/RegionThree";
+import RegionFour from "./Containers/RegionFour";
 
 const Router = () => {
   return (

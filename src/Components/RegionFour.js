@@ -7,7 +7,7 @@ class RegionFour extends Component {
       <div>
         <Iframe
           id="myWidget"
-          src="https://human.biodigital.com/widget/?m=male_region_back_12&dk=<developer_key>"
+          src="https://human.biodigital.com/widget/?m=male_region_back_12&dk=034caada11965ad1a6e226ccb1844db9ede0c1cc"
           width="100%"
           height="90%"
           position="fixed"

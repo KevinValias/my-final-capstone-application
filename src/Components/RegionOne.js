@@ -9,8 +9,7 @@ class RegionOne extends Component {
       <div>
         <Iframe
           id="myWidget"
-          src={`${process.env.REACT_APP_API_KEY}`}
-          //Line 12 is how I have been able to access my API to deliver my content for my specific REGION //
+          src="https://human.biodigital.com/widget/?m=male_region_head_neck_12&dk=034caada11965ad1a6e226ccb1844db9ede0c1cc"
           width="100%"
           height="90%"
           position="fixed"
