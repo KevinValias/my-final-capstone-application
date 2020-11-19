@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 class SignUp extends Component {
   render() {
@@ -7,31 +8,39 @@ class SignUp extends Component {
         <div className="sign-up-auth-inner">
           <form>
             <h3>Sign Up</h3>
-
             <div className="form-group">
-              <label>First name</label>
+              <label>User Name</label>
               <input
                 type="text"
                 className="form-control"
-                placeholder="Enter First name"
+                placeholder="User Name"
               />
             </div>
 
             <div className="form-group">
-              <label>Last name</label>
+              <label>First Name</label>
               <input
                 type="text"
                 className="form-control"
-                placeholder="Enter Last name"
+                placeholder="First Name"
               />
             </div>
 
             <div className="form-group">
-              <label>Email address</label>
+              <label>Last Name</label>
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Last Name"
+              />
+            </div>
+
+            <div className="form-group">
+              <label>Email</label>
               <input
                 type="email"
                 className="form-control"
-                placeholder="Enter email"
+                placeholder="Email"
               />
             </div>
 
@@ -40,29 +49,15 @@ class SignUp extends Component {
               <input
                 type="password"
                 className="form-control"
-                placeholder="Enter Password"
-              />
-            </div>
-            <div className="form-group">
-              <label>City</label>
-              <input
-                type="password"
-                className="form-control"
-                placeholder="Enter Name Of City"
-              />
-            </div>
-            <div className="form-group">
-              <label>ZipCode</label>
-              <input
-                type="password"
-                className="form-control"
-                placeholder="Enter ZipCode"
+                placeholder="Password"
               />
             </div>
 
-            <button type="submit" className="btn btn-primary btn-block">
-              Submit
-            </button>
+            <Link to="/login">
+              <button type="submit" className="btn btn-primary btn-block">
+                Submit
+              </button>
+            </Link>
           </form>
         </div>
       </div>

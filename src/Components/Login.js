@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router";
 import { TextField, Button, Container } from "@material-ui/core";
+import { Link } from "react-router-dom";
 
 class App extends Component {
   state = {
@@ -62,6 +63,15 @@ class App extends Component {
               >
                 Login
               </Button>
+
+              <Link to="/sign-up">
+                <Button
+                  className="btn btn-secondary btn-block"
+                  variant="contained"
+                >
+                  New User?
+                </Button>
+              </Link>
             </form>
           </Container>
         </div>

@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import Iframe from "react-iframe";
-const dotenv = require("dotenv");
-dotenv.config(process.env.REACT_APP_API_KEY);
 
 class RegionOne extends Component {
   render() {
