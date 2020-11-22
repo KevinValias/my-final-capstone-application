@@ -13,6 +13,6 @@ router.post("/", usersController.createUser);
 
 router.put("/:id", usersController.updateUserById);
 
-router.delete("/:userId", usersController.deleteUserByFirstName);
+router.delete("/:id", usersController.deleteUserByUserId);
 
 module.exports = router;

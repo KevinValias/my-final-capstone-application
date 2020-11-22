@@ -20,9 +20,9 @@ const getUserById = (req, res) => {
 };
 
 const createUser = (req, res) => {
-  const { firstName, lastName } = req.body;
+  const { userName, userPassword } = req.body;
   let sql = "INSERT INTO users (userName, userPassword) VALUES (?, ?)";
-  sql = mysql.format(sql, [firstName, lastName]);
+  sql = mysql.format(sql, [userName, userPassword]);
 
   pool.query(sql, (err, results) => {
     if (err) return handleSQLError(res, err);
@@ -41,9 +41,9 @@ const updateUserById = (req, res) => {
   });
 };
 
-const deleteUserByFirstName = (req, res) => {
-  let sql = "DELETE FROM users WHERE userName = ?";
-  sql = mysql.format(sql, [req.params.userName]);
+const deleteUserByUserId = (req, res) => {
+  let sql = "DELETE FROM users WHERE userId = ?";
+  sql = mysql.format(sql, [req.params.id]);
 
   pool.query(sql, (err, results) => {
     if (err) return handleSQLError(res, err);
@@ -56,5 +56,5 @@ module.exports = {
   getUserById,
   createUser,
   updateUserById,
-  deleteUserByFirstName,
+  deleteUserByUserId,
 };
