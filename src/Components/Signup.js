@@ -1,40 +1,60 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
-
-createAccount = (e) => {
-  const userObject = {
-    userName: this.state.userName,
-    userPassword: this.state.userPassword,
-  };
-  e.preventDefault();
-  this.props.setUser(userObject);
-  if (this.props.user.userName !== "") {
-  } else {
-  }
-};
+import { TextField } from "@material-ui/core";
 
 class SignUp extends Component {
+  state = {
+    userName: "",
+    userPassword: "",
+  };
+
+  handleTextChange = (e) => {
+    const state = { ...this.state };
+    state[e.target.name] = e.target.value;
+    this.setState(state);
+  };
+
+  createAccount = (e) => {
+    console.log("is create account running?");
+    const userObject = {
+      userName: this.state.userName,
+      userPassword: this.state.userPassword,
+    };
+    console.log(userObject + "this is the user object");
+    e.preventDefault();
+    this.props.setUser(userObject);
+    if (this.props.user.userName !== "") {
+    } else {
+    }
+  };
   render() {
     return (
       <div className="sign-up-auth-wrapper">
         <div className="sign-up-auth-inner">
-          <form onSubmit={this.createAcount}>
+          <form onSubmit={this.createAccount}>
             <h3>Sign Up</h3>
             <div className="form-group">
               <label>User Name</label>
-              <input
-                type="text"
+              <TextField
+                required
+                onChange={this.handleTextChange}
+                value={this.state.userName}
+                name="userName"
                 className="form-control"
-                placeholder="User Name"
+                lable="Name"
+                type="text"
               />
             </div>
 
             <div className="form-group">
               <label>Password</label>
-              <input
+              <TextField
+                required
+                onChange={this.handleTextChange}
+                value={this.state.userPassword}
                 type="password"
                 className="form-control"
-                placeholder="Password"
+                name="userPassword"
+                label="Password"
               />
             </div>
 

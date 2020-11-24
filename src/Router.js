@@ -3,7 +3,7 @@ import { Switch, Route } from "react-router";
 // import cookie from "cookie";
 // import SignUp from "./Components/SignUp";
 import Login from "./Containers/Login";
-import SignUp from "./Components/SignUp";
+import SignUp from "./Containers/SignUp";
 import Home from "./Components/Home";
 import Dashboard from "./Containers/Dashboard";
 import Add from "./Containers/Add";

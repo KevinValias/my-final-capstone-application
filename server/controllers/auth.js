@@ -25,6 +25,16 @@ const signup = (req, res) => {
   });
 };
 
+// const createUser = (req, res) => {
+//   const { userName, userPassword } = req.body;
+//   let sql = "INSERT INTO users (userName, userPassword) VALUES (?, ?)";
+//   sql = mysql.format(sql, [userName, userPassword]);
+
+//   pool.query(sql, (err, results) => {
+//     if (err) return handleSQLError(res, err);
+//     return res.json({ newId: results.insertId });
+//   });
+// };
 const login = (req, res) => {
   const { userName, userPassword } = req.body;
   let sql = "SELECT * FROM users WHERE userName = ?";

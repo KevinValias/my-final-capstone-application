@@ -14,7 +14,7 @@ import WbCloudyIcon from "@material-ui/icons/WbCloudy";
 
 const Navigation = (props) => {
   const cookies = cookie.parse(document.cookie);
-  console.log(props.user);
+  // console.log(props.user);
   return (
     <div>
       <AppBar postion="relative">

@@ -20,7 +20,7 @@ export const login = (bool) => {
 
 const loginUser = (User) => {
   return function (dispatch) {
-    fetch("/auth/login", {
+    fetch("http://localhost:4000/auth/login", {
       method: "POST",
       body: JSON.stringify(User),
       headers: {
@@ -62,7 +62,7 @@ const userAdded = (data) => {
 };
 const setUser = (User) => {
   return function (dispatch) {
-    fetch("/auth/signup", {
+    fetch("http://localhost:4000/auth/signup", {
       method: "POST",
       body: JSON.stringify(User),
       headers: {
