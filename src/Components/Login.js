@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 class App extends Component {
   state = {
     username: "",
-    password: "",
+    Password: "",
     redirectHome: false,
   };
 
@@ -18,10 +18,21 @@ class App extends Component {
 
   login = (e) => {
     e.preventDefault();
-    document.cookie = "loggedIn=true;max-age=60*1000";
-    this.props.setUser(this.state.username);
-    this.setState({ redirecthome: true });
+    const userObject = {
+      userName: this.state.userName,
+      userPassword: this.state.userPassword,
+    };
+
+    this.props.loginUser(userObject);
   };
+
+  componentDidUpdate() {
+    if (this.props.user.userName !== "") {
+      document.cookie = "loggedIn=true;max-age=600*1000";
+      this.setState({ redirect: true });
+    } else {
+    }
+  }
 
   render() {
     if (this.state.redirectHome) {
@@ -39,7 +50,7 @@ class App extends Component {
                 fullWidth="500px"
                 required
                 onChange={this.handleTextChange}
-                value={this.state.username}
+                value={this.state.userName}
                 name="username"
                 label="Username"
                 type="text"
@@ -50,7 +61,7 @@ class App extends Component {
                 fullWidth="500px"
                 required
                 onChange={this.handleTextChange}
-                value={this.state.password}
+                value={this.state.userPassword}
                 name="password"
                 label="Password"
                 type="password"

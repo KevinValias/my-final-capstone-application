@@ -1,4 +1,9 @@
 export default {
+  user: {
+    userName: "",
+    userPassword: "",
+  },
+
   regions: [
     {
       id: 1,
@@ -38,5 +43,5 @@ export default {
     },
   ],
   loggedIn: false,
-  user: "username",
+  userName: "userName",
 };

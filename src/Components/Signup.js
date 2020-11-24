@@ -1,12 +1,24 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
+createAccount = (e) => {
+  const userObject = {
+    userName: this.state.userName,
+    userPassword: this.state.userPassword,
+  };
+  e.preventDefault();
+  this.props.setUser(userObject);
+  if (this.props.user.userName !== "") {
+  } else {
+  }
+};
+
 class SignUp extends Component {
   render() {
     return (
       <div className="sign-up-auth-wrapper">
         <div className="sign-up-auth-inner">
-          <form>
+          <form onSubmit={this.createAcount}>
             <h3>Sign Up</h3>
             <div className="form-group">
               <label>User Name</label>
@@ -14,33 +26,6 @@ class SignUp extends Component {
                 type="text"
                 className="form-control"
                 placeholder="User Name"
-              />
-            </div>
-
-            <div className="form-group">
-              <label>First Name</label>
-              <input
-                type="text"
-                className="form-control"
-                placeholder="First Name"
-              />
-            </div>
-
-            <div className="form-group">
-              <label>Last Name</label>
-              <input
-                type="text"
-                className="form-control"
-                placeholder="Last Name"
-              />
-            </div>
-
-            <div className="form-group">
-              <label>Email</label>
-              <input
-                type="email"
-                className="form-control"
-                placeholder="Email"
               />
             </div>
 
@@ -53,11 +38,9 @@ class SignUp extends Component {
               />
             </div>
 
-            <Link to="/login">
-              <button type="submit" className="btn btn-primary btn-block">
-                Submit
-              </button>
-            </Link>
+            <button type="submit" className="btn btn-primary btn-block">
+              Create Account
+            </button>
           </form>
         </div>
       </div>
