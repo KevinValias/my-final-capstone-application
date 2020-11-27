@@ -72,7 +72,7 @@ const Navigation = (props) => {
           </ul>
         </Toolbar>
       </AppBar>
-      <Typography color="text-primary">
+      {/* <Typography color="text-primary">
         {cookies.loggedIn && (
           <span className="welcome-message">
             Welcome Back:{" "}
@@ -87,7 +87,7 @@ const Navigation = (props) => {
             !
           </span>
         )}
-      </Typography>
+      </Typography> */}
     </div>
   );
 };

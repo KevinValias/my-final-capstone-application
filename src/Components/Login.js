@@ -2,11 +2,12 @@ import React, { Component } from "react";
 import { Redirect } from "react-router";
 import { TextField, Button, Container } from "@material-ui/core";
 import { Link } from "react-router-dom";
+import HandleLogin from "./HandleLogin";
 
 class App extends Component {
   state = {
-    username: "",
-    Password: "",
+    userName: "",
+    userPassword: "",
     redirectHome: false,
   };
 
@@ -22,17 +23,18 @@ class App extends Component {
       userName: this.state.userName,
       userPassword: this.state.userPassword,
     };
+    console.log(userObject);
 
     this.props.loginUser(userObject);
   };
 
-  componentDidUpdate() {
-    if (this.props.user.userName !== "") {
-      document.cookie = "loggedIn=true;max-age=600*1000";
-      this.setState({ redirect: true });
-    } else {
-    }
-  }
+  // componentDidUpdate() {
+  //   if (this.props.user.userName !== "") {
+  //     document.cookie = "loggedIn=true;max-age=600*1000";
+  //     this.setState({ redirect: true });
+  //   } else {
+  //   }
+  // }
 
   render() {
     if (this.state.redirectHome) {
@@ -51,7 +53,7 @@ class App extends Component {
                 required
                 onChange={this.handleTextChange}
                 value={this.state.userName}
-                name="username"
+                name="userName"
                 label="Username"
                 type="text"
               />
@@ -62,12 +64,13 @@ class App extends Component {
                 required
                 onChange={this.handleTextChange}
                 value={this.state.userPassword}
-                name="password"
+                name="userPassword"
                 label="Password"
                 type="password"
               />
 
               <Button
+                onCLick={this.HandleLogin}
                 type="submit"
                 className="btn btn-primary btn-block"
                 variant="contained"

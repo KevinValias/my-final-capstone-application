@@ -11,12 +11,12 @@ export const removeRegion = (index) => {
   };
 };
 
-export const login = (bool) => {
-  return {
-    type: "LOGIN",
-    value: bool,
-  };
-};
+// export const login = (bool) => {
+//   return {
+//     type: "LOGIN",
+//     value: bool,
+//   };
+// };
 
 const loginUser = (User) => {
   return function (dispatch) {
@@ -48,12 +48,6 @@ const userLoaded = (data) => {
   };
 };
 
-// export const setUser = (username) => {
-//   return {
-//     type: "SET_USER",
-//     value: username,
-//   };
-// };
 const userAdded = (data) => {
   return {
     type: "ADD_USER",
