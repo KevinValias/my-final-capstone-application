@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import { Redirect } from "react-router";
 import { TextField, Button, Container } from "@material-ui/core";
 import { Link } from "react-router-dom";
-import HandleLogin from "./HandleLogin";
+// import cookie from "cookie";
+// import HandleLogin from "./HandleLogin";
 
 class App extends Component {
   state = {
@@ -28,16 +29,16 @@ class App extends Component {
     this.props.loginUser(userObject);
   };
 
-  // componentDidUpdate() {
-  //   if (this.props.user.userName !== "") {
-  //     document.cookie = "loggedIn=true;max-age=600*1000";
-  //     this.setState({ redirect: true });
-  //   } else {
-  //   }
-  // }
+  componentDidUpdate() {
+    if (this.props.user.userName !== "") {
+      document.cookie = "loggedIn=true;max-age=600*1000";
+      this.setState({ redirectHome: true });
+    } else {
+    }
+  }
 
   render() {
-    if (this.state.redirectHome) {
+    if (this.setState({ redirectHome: true })) {
       return <Redirect to="/" />;
     }
     return (
@@ -70,7 +71,6 @@ class App extends Component {
               />
 
               <Button
-                onCLick={this.HandleLogin}
                 type="submit"
                 className="btn btn-primary btn-block"
                 variant="contained"

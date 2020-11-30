@@ -10,8 +10,6 @@ import {
 import cookie from "cookie";
 import WbCloudyIcon from "@material-ui/icons/WbCloudy";
 
-// import { Link } from "react-router-dom";
-
 const Navigation = (props) => {
   const cookies = cookie.parse(document.cookie);
   // console.log(props.user);

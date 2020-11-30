@@ -42,6 +42,6 @@ export default {
         " It also rotates the scapula and retracts it towards the spinal column.",
     },
   ],
-  loggedIn: false,
-  userName: "userName",
+  // loginUser: false,
+  // userName: "userName",
 };
