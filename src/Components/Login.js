@@ -25,20 +25,31 @@ class App extends Component {
       userPassword: this.state.userPassword,
     };
     console.log(userObject);
+    console.log("the log in function rans");
 
     this.props.loginUser(userObject);
-  };
+    this.setState({ redirectHome: true });
 
-  componentDidUpdate() {
-    if (this.props.user.userName !== "") {
+    console.log(this.props.user.userName);
+    console.log(this.props.user.token);
+
+    if (this.props.user.token !== "") {
       document.cookie = "loggedIn=true;max-age=600*1000";
       this.setState({ redirectHome: true });
     } else {
     }
-  }
+  };
+
+  // componentDidUpdate() {
+  //   if (this.props.user.token !== "") {
+  //     document.cookie = "loggedIn=true;max-age=600*1000";
+  //     this.setState({ redirectHome: true });
+  //   } else {
+  //   }
+  // }
 
   render() {
-    if (this.setState({ redirectHome: true })) {
+    if (this.state.redirectHome) {
       return <Redirect to="/" />;
     }
     return (
