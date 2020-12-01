@@ -31,7 +31,7 @@ class App extends Component {
     this.setState({ redirectHome: true });
 
     console.log(this.props.user.userName);
-    console.log(this.props.user.token);
+    console.log(this.props.user.token); //
 
     if (this.props.user.token !== "") {
       document.cookie = "loggedIn=true;max-age=600*1000";

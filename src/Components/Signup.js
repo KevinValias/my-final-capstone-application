@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { TextField } from "@material-ui/core";
+import { Button, Link, TextField } from "@material-ui/core";
 
 class SignUp extends Component {
   state = {
@@ -57,10 +57,15 @@ class SignUp extends Component {
                 label="Password"
               />
             </div>
-
-            <button type="submit" className="btn btn-primary btn-block">
-              Create Account
-            </button>
+            <Link to="/login">
+              <Button
+                type="submit"
+                className="btn btn-secondary btn-block"
+                variant="contained"
+              >
+                Create Account
+              </Button>
+            </Link>
           </form>
         </div>
       </div>
