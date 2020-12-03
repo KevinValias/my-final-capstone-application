@@ -25,10 +25,10 @@ class App extends Component {
       userPassword: this.state.userPassword,
     };
     console.log(userObject);
-    console.log("the log in function rans");
+    console.log("the log in function ran");
 
     this.props.loginUser(userObject);
-    this.setState({ redirectHome: true });
+    this.setState({ redirectHome: false });
 
     console.log(this.props.user.userName);
     console.log(this.props.user.token); //

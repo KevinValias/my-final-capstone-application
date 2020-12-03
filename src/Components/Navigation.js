@@ -46,7 +46,7 @@ const Navigation = (props) => {
                   </Button>
                   <Button
                     onClick={() => {
-                      // this.props.user.token = "";
+                      props.user.token = null;
                       document.cookie = "loggedIn=false";
                       window.location.replace("/");
                     }}
