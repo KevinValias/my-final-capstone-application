@@ -34,7 +34,6 @@ class App extends Component {
     console.log(this.props.user.token); //
 
     if (this.props.user.token !== "") {
-      document.cookie = "loggedIn=true;max-age=600*1000";
       this.setState({ redirectHome: true });
     } else {
     }

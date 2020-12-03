@@ -29,6 +29,7 @@ const loginUser = (User) => {
     })
       .then((res) =>
         res.json().then((data) => {
+          document.cookie = "loggedIn=true;max-age=600*1000";
           dispatch(userLoaded(data));
         })
       )
