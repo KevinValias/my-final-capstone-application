@@ -9,7 +9,7 @@ const { logger } = require("./middleware");
 const app = express();
 
 const port = process.env.PORT || 4000;
-app.use(express.static("client/build"));
+app.use(express.static("client"));
 
 app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
