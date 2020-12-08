@@ -52,7 +52,7 @@ const Navigation = (props) => {
                       onClick={() => {
                         props.user.token = null;
                         document.cookie = "loggedIn=";
-                        window.location.replace("/login");
+                        window.location.replace("/");
                       }}
                     >
                       Logout
