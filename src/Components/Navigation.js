@@ -44,27 +44,24 @@ const Navigation = (props) => {
                   <Button>
                     <Link to={"/dashboard"}>DASHBOARD</Link>
                   </Button>
-                  <Button
-                    onClick={() => {
-                      props.user.token = null;
-                      document.cookie = "loggedIn=false";
-                      window.location.replace("/");
-                    }}
-                  >
-                    Logout
-                  </Button>
+                  <Link to="/">
+                    <Button
+                      onClick={() => {
+                        props.user.token = null;
+                        document.cookie = "loggedIn=false";
+                      }}
+                    >
+                      Logout
+                    </Button>
+                  </Link>
                 </div>
               )}
             </li>
             <li className="nav-list-item">
               {document.cookie !== "loggedIn=true" && (
-                <Button
-                  onClick={() => {
-                    window.location.replace("/login");
-                  }}
-                >
-                  Login
-                </Button>
+                <Link to="/login">
+                  <Button>Login</Button>
+                </Link>
               )}
             </li>
           </ul>

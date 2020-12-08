@@ -2,6 +2,7 @@
   "name": "my-final-capstone-application",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost4000",
   "dependencies": {
     "@material-ui/core": "^4.11.0",
     "@material-ui/icons": "^4.9.1",
@@ -32,7 +33,7 @@
     "redux-thunk": "^2.3.0"
   },
   "scripts": {
-    "start": "concurrently \"npm run server\" \"react-scripts start\" ",
+    "start": "react-scripts start",
     "server": "nodemon Server/index.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
