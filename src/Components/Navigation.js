@@ -44,7 +44,7 @@ const Navigation = (props) => {
                   <Button>
                     <Link to={"/dashboard"}>DASHBOARD</Link>
                   </Button>
-                  <Link to="/">
+                  <Link to="/login">
                     <Button
                       onClick={() => {
                         props.user.token = null;
