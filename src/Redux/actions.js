@@ -20,7 +20,7 @@ export const removeRegion = (index) => {
 // after building new actions make sure to make relative paths//
 const loginUser = (User) => {
   return function (dispatch) {
-    fetch("http://localhost3000/auth/login", {
+    fetch("http://localhost:4000/auth/login", {
       method: "POST",
       body: JSON.stringify(User),
       headers: {
@@ -35,6 +35,7 @@ const loginUser = (User) => {
       )
 
       .catch((error) => {
+        console.log("there is an error");
         return {
           type: "error",
           value: error,
@@ -57,7 +58,7 @@ const userAdded = (data) => {
 };
 const setUser = (User) => {
   return function (dispatch) {
-    fetch("http://localhost3000/auth/signup", {
+    fetch("http://localhost4000/auth/signup", {
       method: "POST",
       body: JSON.stringify(User),
       headers: {

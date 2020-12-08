@@ -29,6 +29,7 @@ const Navigation = (props) => {
                 <Link to={"/about"}>ABOUT</Link>
               </Button>
             </li>
+
             <li className="nav-list-item">
               {document.cookie === "loggedIn=true" && (
                 <div>
@@ -38,26 +39,29 @@ const Navigation = (props) => {
                 </div>
               )}
             </li>
+
             <li className="nav-list-item">
               {document.cookie === "loggedIn=true" && (
                 <div>
                   <Button>
                     <Link to={"/dashboard"}>DASHBOARD</Link>
                   </Button>
-                  {/* <Link to="/login"> */}
-                  <Button
-                    onClick={() => {
-                      "window.location.href='/login'";
-                      props.user.token = null;
-                      document.cookie = "loggedIn=false";
-                    }}
-                  >
-                    Logout
-                  </Button>
-                  {/* </Link> */}
+
+                  <Link to="/login">
+                    <Button
+                      onClick={() => {
+                        props.user.token = null;
+                        document.cookie = "loggedIn=";
+                        window.location.replace("/login");
+                      }}
+                    >
+                      Logout
+                    </Button>
+                  </Link>
                 </div>
               )}
             </li>
+
             <li className="nav-list-item">
               {document.cookie !== "loggedIn=true" && (
                 <Link to="/login">

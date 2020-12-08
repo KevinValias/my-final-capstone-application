@@ -32,6 +32,7 @@ class App extends Component {
 
     console.log(this.props.user.userName);
     console.log(this.props.user.token); //
+    // document.cookie = "loggedIn=true";
 
     if (this.props.user.token !== "") {
       this.setState({ redirectHome: true });
