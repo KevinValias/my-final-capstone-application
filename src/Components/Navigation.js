@@ -44,16 +44,17 @@ const Navigation = (props) => {
                   <Button>
                     <Link to={"/dashboard"}>DASHBOARD</Link>
                   </Button>
-                  <Link to="/login">
-                    <Button
-                      onClick={() => {
-                        props.user.token = null;
-                        document.cookie = "loggedIn=false";
-                      }}
-                    >
-                      Logout
-                    </Button>
-                  </Link>
+                  {/* <Link to="/login"> */}
+                  <Button
+                    onClick={() => {
+                      "window.location.href='/login'";
+                      props.user.token = null;
+                      document.cookie = "loggedIn=false";
+                    }}
+                  >
+                    Logout
+                  </Button>
+                  {/* </Link> */}
                 </div>
               )}
             </li>
