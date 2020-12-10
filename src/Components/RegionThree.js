@@ -7,7 +7,7 @@ class RegionThree extends Component {
       <div>
         <Iframe
           id="myWidget"
-          src="https://human.biodigital.com/widget/?m=male_region_upper_limb_12&dk=034caada11965ad1a6e226ccb1844db9ede0c1cc"
+          src="https://human.biodigital.com/widget/?m=male_region_upper_limb_12&dk=1b09dbdde4e4457279fd0413b853c9b31fe5d200"
           width="100%"
           height="90%"
           position="fixed"
